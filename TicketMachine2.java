@@ -1,5 +1,5 @@
 /**
- * TicketMachine models a naive ticket machine that issues
+ * TicketMachine2 models a naive ticket machine that issues
  * flat-fare tickets.
  * The price of a ticket is specified via the constructor.
  * It is a naive machine in the sense that it trusts its users
@@ -9,7 +9,7 @@
  * @author David J. Barnes and Michael Kolling
  * @version 2008.03.30
  */
-class TicketMachine
+public class TicketMachine2
 {
     // The price of a ticket from this machine.
     private Integer price;
@@ -19,15 +19,13 @@ class TicketMachine
     private Integer total;
     // The number of tickets printed.
     private Integer ticketNumber;
-    
-    private Integer status;
 
     /**
      * Create a machine that issues tickets of the given price.
      * Note that the price must be greater than zero, and there
      * are no checks to ensure this.
      */
-    public TicketMachine(Integer ticketCost)
+    public TicketMachine2(Integer ticketCost)
     {
         price = ticketCost;
         balance = 0;
@@ -93,7 +91,7 @@ class TicketMachine
         // Update the total collected with the balance.
         total = total + balance;
         // Clear the balance.
-        balance = balance-price;
+        balance = 0;
         
         return "Ticket price: " + price + " cents. " + "Your total is " + total + ".";
     }
